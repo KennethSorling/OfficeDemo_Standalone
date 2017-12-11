@@ -1,0 +1,93 @@
+﻿<Window x:Class="OfficeDemo_Standalone.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OfficeDemo_Standalone"
+        mc:Ignorable="d"
+        Title="Smartare Rapportering" Height="480" Width="640">
+    <Window.Background>
+        <ImageBrush  ImageSource="/OfficeDemo_Standalone;component/Resources/calculator.jpg"/>
+    </Window.Background>
+
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="0,10,0,0" />
+            <Setter Property="FontFamily" Value="./#Cinzel Regular" />
+            <Setter Property="FontSize" Value="24" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="./#Cincel Regular" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="Background" Value="Green" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <Style TargetType="ComboBoxItem">
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Arial" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+
+        <Style TargetType="Window">
+            <Setter Property="Background" Value="AliceBlue" />
+        </Style>
+    </Window.Resources>    
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.ColumnSpan="2" HorizontalAlignment="Center" Background="LightGray" FontSize="36">Smartare Rapportering</Label>
+        <Label Grid.Row="1" HorizontalAlignment="right" Background="LightGray">Återförsäljare</Label>
+        <ComboBox Name="cboSupplier" Grid.Row="1" Grid.Column="1" Margin="10,10,0,0">
+            <ComboBoxItem>Edsviken Bil AB</ComboBoxItem>
+            <ComboBoxItem>Thorvalds Fordon</ComboBoxItem>
+            <ComboBoxItem>FM Automobil</ComboBoxItem>
+            <ComboBoxItem>Silverdalen AB</ComboBoxItem>
+            <ComboBoxItem>Kista Limousiner</ComboBoxItem>
+            <ComboBoxItem>Lennartssons Motor</ComboBoxItem>
+            <ComboBoxItem>Marcus Racing</ComboBoxItem>
+            <ComboBoxItem>Pettersson Bil AB</ComboBoxItem>
+
+        </ComboBox>
+        <Label Grid.Row="2" HorizontalAlignment="Right" Background="LightGray">Månad</Label>
+        <ComboBox Name="cboMonth" Grid.Row="2" Grid.Column="1" Margin="10,10,0,0">
+            <ComboBoxItem>Januari</ComboBoxItem>
+            <ComboBoxItem>Februari</ComboBoxItem>
+            <ComboBoxItem>Mars</ComboBoxItem>
+            <ComboBoxItem>April</ComboBoxItem>
+            <ComboBoxItem>Maj</ComboBoxItem>
+            <ComboBoxItem>Juni</ComboBoxItem>
+            <ComboBoxItem>Juli</ComboBoxItem>
+            <ComboBoxItem>Augusti</ComboBoxItem>
+            <ComboBoxItem>September</ComboBoxItem>
+            <ComboBoxItem>Oktober</ComboBoxItem>
+            <ComboBoxItem>November</ComboBoxItem>
+            <ComboBoxItem>December</ComboBoxItem>
+        </ComboBox>
+        <Label Grid.Row="3" HorizontalAlignment="Right" Background="LightGray">Försäljning(KKR)</Label>
+        <TextBox Grid.Row="3" Grid.Column="1" Name="txtSales" Margin="10,10,0,0"></TextBox>
+        <Label Grid.Row="4" HorizontalAlignment="right" Background="LightGray">Order (KKR)</Label>
+        <TextBox Grid.Row="4" Grid.Column="1" Name="txtOrders" Margin="10,10,0,0"></TextBox>
+        <Label Grid.Row="5" HorizontalAlignment="Right" Background="LightGray">Kostnader (KKR)</Label>
+        <TextBox Grid.Row="5" Grid.Column="1" Name="txtCosts" Margin="10,10,0,0"></TextBox>
+        <Label Grid.Row="6" HorizontalAlignment="right" Background="LightGray">Mottagare (e-post)</Label>
+        <TextBox Grid.Row="6" Grid.Column="1" Name="txtEmail" Margin="10,10,0,0"></TextBox>
+        <Button Grid.Row="7" Grid.Column="1" Name="btnSend" Margin="10,10,100,0" Click="btnSend_Click">Rapportera</Button>
+    </Grid>
+     
+</Window>
